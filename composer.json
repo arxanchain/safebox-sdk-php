@@ -1,6 +1,6 @@
 {
-    "name": "arxanchain/safebox-php",
-    "description": "safebox",
+    "name": "arxanchain/safebox-sdk-php",
+    "description": "safebox for php",
     "type": "library",
     "require": {
         "php": ">=7.0"
