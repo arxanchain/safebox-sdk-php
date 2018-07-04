@@ -6,7 +6,7 @@
         "dist": {
             "type": "path",
             "url": "/home/carl/workspace/src/github.com/arxanchain/php-common",
-            "reference": "35d7257a39a85526071c14c9a2fdc56869a6da39",
+            "reference": "d1b0f16ab54e485e6d00e0dfdd1654427d811bce",
             "shasum": null
         },
         "require": {
