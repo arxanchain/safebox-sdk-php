@@ -1,8 +1,9 @@
 <?php
 
-require_once (__DIR__ . "/../../php-common/cryption/crypto.php");
-require_once (__DIR__ . "/../../php-common/error/error.php");
+namespace arxan;
 
+require_once (__DIR__ . "/../../vendor/autoload.php");
+use arxan\Encrypt;
 
 interface SafeBoxApi {
     // 托管秘钥
@@ -33,7 +34,7 @@ class SafeBoxClient implements SafeBoxApi {
         $this->host = $host;
         $this->api_key = $api_key;
         $this->cert_path = $cert_path;
-        $this->ecc_client = new encrypt($cert_path,$api_key);
+        $this->ecc_client = new Encrypt($cert_path,$api_key);
 
         $this->header = array();
         $this->header[0] = 'API-Key:' . $api_key;
@@ -47,12 +48,6 @@ class SafeBoxClient implements SafeBoxApi {
         curl_setopt($this->curl_get, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($this->curl_get, CURLOPT_HTTPHEADER, $this->header);
     }
-
-    /*
-    function setHeader($mode,$call_back){
-
-    }
-    */
 
     function trusteeKeyPair($did,$key_pair,&$response){
         if($did ==""){

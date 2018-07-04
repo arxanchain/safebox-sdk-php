@@ -1,16 +1,18 @@
 <?php
 
-require_once (__DIR__ . "/../wallet-sdk-php/api/wallet.php");
-require_once (__DIR__ . "/api/safebox.php");
+require_once (__DIR__ . "/src/arxan/SafeBoxClient.php");
+require_once (__DIR__ . "/vendor/autoload.php");
+use arxan\SafeBoxClient;
+use arxan\Encrypt;
 
 $host = "http://103.67.193.150:15007";
 $api_key = "eZUDImzTp1528874024";
-$cert_path = "/home/carl/workspace/src/github.com/arxanchain/php-common/cryption/cert/client_certs";
+$cert_path = "/home/carl/workspace/src/github.com/arxanchain/php-common/cert/client_certs";
 $did = "did:axn:c316b8d9-2d1a-42b8-b2f2-950eecd90042";
 
 
 $did = "did:axn:2ffda0e3-ec97-4c24-bb9f-3ba801ca94e5";
-$s_code = "宋松帅哥好";
+$s_code = "我爱你中国";
 
 $safebox = new SafeBoxClient($host,$api_key,$cert_path);
 /*
@@ -59,6 +61,7 @@ if($ret != 0){
 
 echo "get code succ: ",$code["Payload"]["code"],"\n";
 
+/*
 // 修改安全吗
 $new = "我爱你中国";
 $ret = $safebox->updateAssistCode($did, $s_code,$new,$new_code);
@@ -68,4 +71,5 @@ if($ret != 0){
     echo "\n";
 }
 echo "update code succ\n";
+ */
 
