@@ -18,14 +18,5 @@
             "arxan\\": "src/arxan"
         }   
     },
-    "require": {
-        "arxanchain/php-common": "*"
-    },
-    "minimum-stability": "dev",
-    "repositories": {
-        "local": {
-            "type": "path",
-            "url": "/home/carl/workspace/src/github.com/arxanchain/php-common"
-        }
-    }
+    "minimum-stability": "dev"
 }
