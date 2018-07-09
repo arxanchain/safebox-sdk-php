@@ -17,6 +17,5 @@
         "psr-4": {
             "arxan\\": "src/arxan"
         }   
-    },
-    "minimum-stability": "dev"
+    }
 }
