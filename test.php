@@ -43,16 +43,6 @@ if($ret != 0){
 
 echo "pub key: ",$pub["Payload"]["public_key"],"\n";
 
-// 获取公钥 错误实例
-$ret = $safebox->queryPublicKey($did, "code",$pub);
-if($ret != 0){
-    echo "get pub key error\n";
-    var_dump($pub);
-    echo "\n";
-}
-
-echo "pub key: ",$pub["Payload"]["public_key"],"\n";
-
 // 获取安全码
 $ret = $safebox->recoverAssistCode($did, $code);
 if($ret != 0){
@@ -60,6 +50,16 @@ if($ret != 0){
 }
 
 echo "get code succ: ",$code["Payload"]["code"],"\n";
+
+// 获取公钥 错误实例
+$ret = $safebox->queryPublicKey($did, "code",$pub);
+if($ret != 0){
+    echo "get pub key error\n";
+    var_dump($pub);
+    echo "\n";
+}
+echo "test get queryPublicKey error succ!!\n";
+echo "pub key: ",$pub["Payload"]["public_key"],"\n";
 
 /*
 // 修改安全吗
